@@ -30,4 +30,11 @@ dependencies {
     // EventBus
     compile project(':eventbus_activity_scope')
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    //注解
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //recyclerView适配器
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.8'
 }

@@ -2,12 +2,8 @@ package com.byb.sc.ui.home;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.byb.sc.R;
-import com.byb.sc.base.BaseMainFragment;
+import com.byb.sc.base.BaseListFragment;
 
 /**
  * 类描述：
@@ -16,7 +12,7 @@ import com.byb.sc.base.BaseMainFragment;
  * @date: 2018/9/12 下午3:12
  */
 
-public class HomeMainFragment extends BaseMainFragment {
+public class HomeMainFragment extends BaseListFragment {
 
     public static HomeMainFragment newInstance() {
 
@@ -26,11 +22,19 @@ public class HomeMainFragment extends BaseMainFragment {
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fra_home_main, container, false);
-//        initView(view);
-        return view;
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
+
+    }
+
+    @Override
+    protected void onPullDownRefreshListener() {
+
+    }
+
+    @Override
+    protected void onLoadMoreListener() {
+
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="list_load_more">
+        <item name="android:textSize">@dimen/txt_first</item>
+        <item name="android:textColor">@color/txt_second_title</item>
+    </style>
+
+</resources>

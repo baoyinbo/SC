@@ -87,12 +87,12 @@ public class MainFragment extends SupportFragment {
             public void onTabSelected(int position, int prePosition) {
                 showHideFragment(fragments[position], fragments[prePosition]);
 
-                BottomBarTab tab = mBottomBar.getItem(HOME);
-                if (position == HOME) {
-                    tab.setUnreadCount(0);
-                } else {
-                    tab.setUnreadCount(tab.getUnreadCount() + 1);
-                }
+//                BottomBarTab tab = mBottomBar.getItem(HOME);
+//                if (position == HOME) {
+//                    tab.setUnreadCount(0);
+//                } else {
+//                    tab.setUnreadCount(tab.getUnreadCount() + 1);
+//                }
             }
 
             @Override
