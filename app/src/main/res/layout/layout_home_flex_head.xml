@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="20dp"
+    android:background="@color/home_head">
+
+
+    <LinearLayout
+        android:id="@+id/llHomeStore"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/home_head_flex"
+            android:layout_height="@dimen/home_head_flex"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/pic_store"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/home_head_flex"
+            android:text="@string/home_store"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/llHomeCarAdd"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/home_head_flex"
+            android:layout_height="@dimen/home_head_flex"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/pic_add_car"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/home_head_flex"
+            android:text="@string/home_add_car"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llHomeCustomer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground">rue"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/home_head_flex"
+            android:layout_height="@dimen/home_head_flex"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/pic_customer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/home_head_flex"
+            android:text="@string/home_customer_manage"/>
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/llHomeSubscription"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="@dimen/home_head_flex"
+            android:layout_height="@dimen/home_head_flex"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/pic_subscription"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/home_head_flex"
+            android:text="@string/home_subscription_list"/>
+
+    </LinearLayout>
+
+</LinearLayout>

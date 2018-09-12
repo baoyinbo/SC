@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:gravity="center_vertical"
+    android:background="@color/home_head">
+    
+    <ImageView
+        android:id="@+id/ivHomeStore"
+        android:layout_width="@dimen/home_head_toolbar"
+        android:layout_height="@dimen/home_head_toolbar"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/pic_store"/>
+
+    <ImageView
+        android:id="@+id/ivHomeCarAdd"
+        android:layout_width="@dimen/home_head_toolbar"
+        android:layout_height="@dimen/home_head_toolbar"
+        android:layout_toRightOf="@id/ivHomeStore"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/pic_add_car"/>
+
+    <ImageView
+        android:id="@+id/ivHomeCustomer"
+        android:layout_width="@dimen/home_head_toolbar"
+        android:layout_height="@dimen/home_head_toolbar"
+        android:layout_toRightOf="@id/ivHomeCarAdd"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/pic_customer"/>
+
+    <ImageView
+        android:id="@+id/ivHomeSub"
+        android:layout_width="@dimen/home_head_toolbar"
+        android:layout_height="@dimen/home_head_toolbar"
+        android:layout_toRightOf="@id/ivHomeCustomer"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/pic_subscription"/>
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/pic_message"/>
+</RelativeLayout>

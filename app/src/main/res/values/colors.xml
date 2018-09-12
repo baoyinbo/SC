@@ -8,6 +8,9 @@
     <color name="tab_unselect">#c9c9c9</color>
     <color name="bg_btn">#dadada</color>
 
+
+    <color name="home_head">#4E5368</color>
+
     <!--文字颜色-->
     <!--一级标题 黑色-->
     <color name="txt_first_title">#555555</color>
@@ -15,5 +18,8 @@
     <color name="txt_second_title">#777777</color>
     <!--三级标题 灰色-->
     <color name="txt_third_title">#999999</color>
+
+    <!--金色-->
+    <color name="txt_gold">#f0ae52</color>
 
 </resources>

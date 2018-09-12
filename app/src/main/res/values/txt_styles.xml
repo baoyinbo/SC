@@ -6,4 +6,9 @@
         <item name="android:textColor">@color/txt_second_title</item>
     </style>
 
+    <style name="home_head_flex">
+        <item name="android:textSize">@dimen/txt_second</item>
+        <item name="android:textColor">@color/txt_gold</item>
+    </style>
+
 </resources>

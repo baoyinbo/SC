@@ -7,4 +7,11 @@
     <string name="tab_source">车源</string>
     <string name="tab_find">发现</string>
     <string name="tab_my">我的</string>
+
+
+    <string name="home_store">库存管理</string>
+    <string name="home_add_car">车辆发布</string>
+    <string name="home_customer_manage">客户管理</string>
+    <string name="home_subscription_list">订阅列表</string>
+
 </resources>
