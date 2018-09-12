@@ -8,8 +8,12 @@
     <color name="tab_unselect">#c9c9c9</color>
     <color name="bg_btn">#dadada</color>
 
-
+    <color name="transparent_white_30">#b2ffffff</color>
     <color name="home_head">#4E5368</color>
+
+
+    <color name="divide_gray">#f0f0f0</color>
+
 
     <!--文字颜色-->
     <!--一级标题 黑色-->
@@ -21,5 +25,7 @@
 
     <!--金色-->
     <color name="txt_gold">#f0ae52</color>
+
+    <color name="txt_white">#ffffff</color>
 
 </resources>

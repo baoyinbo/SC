@@ -7,35 +7,43 @@
     android:background="@color/home_head">
     
     <ImageView
-        android:id="@+id/ivHomeStore"
+        android:id="@+id/ivHomeStore2"
         android:layout_width="@dimen/home_head_toolbar"
         android:layout_height="@dimen/home_head_toolbar"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:src="@mipmap/pic_store"/>
 
     <ImageView
-        android:id="@+id/ivHomeCarAdd"
+        android:id="@+id/ivHomeCarAdd2"
         android:layout_width="@dimen/home_head_toolbar"
         android:layout_height="@dimen/home_head_toolbar"
-        android:layout_toRightOf="@id/ivHomeStore"
+        android:layout_toRightOf="@id/ivHomeStore2"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:src="@mipmap/pic_add_car"/>
 
     <ImageView
-        android:id="@+id/ivHomeCustomer"
+        android:id="@+id/ivHomeCustomer2"
         android:layout_width="@dimen/home_head_toolbar"
         android:layout_height="@dimen/home_head_toolbar"
-        android:layout_toRightOf="@id/ivHomeCarAdd"
+        android:layout_toRightOf="@id/ivHomeCarAdd2"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:src="@mipmap/pic_customer"/>
 
     <ImageView
-        android:id="@+id/ivHomeSub"
+        android:id="@+id/ivHomeSub2"
         android:layout_width="@dimen/home_head_toolbar"
         android:layout_height="@dimen/home_head_toolbar"
-        android:layout_toRightOf="@id/ivHomeCustomer"
+        android:layout_toRightOf="@id/ivHomeCustomer2"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:src="@mipmap/pic_subscription"/>
+
+    <ImageView
+        android:id="@+id/ivHomeSearch2"
+        android:layout_width="@dimen/home_head_toolbar"
+        android:layout_height="@dimen/home_head_toolbar"
+        android:layout_toRightOf="@id/ivHomeSub2"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:src="@mipmap/pic_search_gold"/>
     
     <ImageView
         android:layout_width="wrap_content"
