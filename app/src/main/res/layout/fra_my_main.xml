@@ -61,16 +61,226 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/item_height"
                 android:layout_marginTop="1dp"
                 android:background="@android:color/white">
                 <com.byb.sc.utils.TextDrawableCenterView
+                    style="@style/txt_second_black"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_centerInParent="true"
                     android:drawableLeft="@mipmap/ic_my_stock"
-                    android:text="我的库存"/>
+                    android:drawablePadding="5dp"
+                    android:text="@string/my_stock"
+                    android:background="?attr/selectableItemBackground"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/divide_gray"/>
+                <com.byb.sc.utils.TextDrawableCenterView
+                    style="@style/txt_second_black"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@mipmap/ic_my_collection"
+                    android:drawablePadding="5dp"
+                    android:text="@string/my_collection"
+                    android:background="?attr/selectableItemBackground"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/divide_gray"/>
+                <com.byb.sc.utils.TextDrawableCenterView
+                    style="@style/txt_second_black"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@mipmap/ic_my_sub"
+                    android:drawablePadding="5dp"
+                    android:text="@string/my_sub"
+                    android:background="?attr/selectableItemBackground"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_margin"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:id="@+id/ivComployee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_my_comployee"/>
+
+                    <TextView
+                        style="@style/txt_first_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivComployee"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/txt_margin"
+                        android:text="@string/my_comployee_manage"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_right"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divide_gray"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:id="@+id/ivJob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_my_job"/>
+
+                    <TextView
+                        style="@style/txt_first_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivJob"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/txt_margin"
+                        android:text="@string/my_job_manage"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_right"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_margin"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:id="@+id/ivFeedback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_my_feedback"/>
+
+                    <TextView
+                        style="@style/txt_first_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivFeedback"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/txt_margin"
+                        android:text="@string/my_feedback"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_right"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divide_gray"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:id="@+id/ivContact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_my_contact"/>
+
+                    <TextView
+                        style="@style/txt_first_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivContact"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/txt_margin"
+                        android:text="@string/my_contack"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_right"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divide_gray"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:background="?attr/selectableItemBackground">
+                    <ImageView
+                        android:id="@+id/ivAbout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_my_about"/>
+
+                    <TextView
+                        style="@style/txt_first_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ivAbout"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/txt_margin"
+                        android:text="@string/my_about"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_right"/>
+                </RelativeLayout>
             </LinearLayout>
 
         </LinearLayout>

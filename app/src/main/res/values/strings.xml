@@ -34,4 +34,14 @@
     <string name="union_company_recommend">商家推荐</string>
     <string name="union_car_recommend">联盟车辆推荐</string>
 
+
+    <string name="my_stock">我的车辆</string>
+    <string name="my_sub">我的订阅</string>
+    <string name="my_collection">我的关注</string>
+    <string name="my_comployee_manage">员工管理</string>
+    <string name="my_job_manage">职务管理</string>
+    <string name="my_feedback">意见反馈</string>
+    <string name="my_contack">联系客服</string>
+    <string name="my_about">关于帅车</string>
+
 </resources>
