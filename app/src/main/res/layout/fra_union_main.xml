@@ -5,163 +5,219 @@
     android:layout_height="match_parent">
 
     <include layout="@layout/toolbar" />
-
-    <ScrollView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="match_parent">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:id="@+id/rlCompany"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_item_white_click"
-                android:padding="@dimen/activity_horizontal_margin">
-
-                <ImageView
-                    android:id="@+id/ivCompanyLogo"
-                    android:layout_width="@dimen/head_size"
-                    android:layout_height="@dimen/head_size"
-                    android:src="@mipmap/pic_default_head" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/ivCompanyLogo"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-                    <TextView
-                        style="@style/txt_first_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableRight="@mipmap/ic_auth"
-                        android:drawablePadding="5dp"
-                        android:text="杭州帅车"/>
-                    <TextView
-                        style="@style/txt_second_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/txt_margin"
-                        android:text="负责人名字"/>
-                    <TextView
-                        style="@style/txt_second_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/txt_margin_small"
-                        android:text="136 6666 6666"/>
-                    <TextView
-                        style="@style/txt_second_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/txt_margin_small"
-                        android:text="杭州市拱墅区石祥路"/>
-                </LinearLayout>
-
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_right"/>
-            </RelativeLayout>
-
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:layout_marginTop="@dimen/item_margin"
-                android:paddingTop="@dimen/item_margin"
-                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:gravity="center_vertical">
-                    <include layout="@layout/comm_item_label" />
-                    <TextView
-                        style="@style/txt_first_black"
+                <RelativeLayout
+                    android:id="@+id/rlCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_white_click"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                    <ImageView
+                        android:id="@+id/ivCompanyLogo"
+                        android:layout_width="@dimen/head_size"
+                        android:layout_height="@dimen/head_size"
+                        android:src="@mipmap/pic_default_head" />
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/txt_margin"
-                        android:text="@string/union_service"/>
-                </LinearLayout>
+                        android:layout_toRightOf="@id/ivCompanyLogo"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/txt_first_black_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@mipmap/ic_auth"
+                            android:drawablePadding="5dp"
+                            android:text="杭州帅车"/>
+                        <TextView
+                            style="@style/txt_second_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/txt_margin"
+                            android:text="负责人名字"/>
+                        <TextView
+                            style="@style/txt_second_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/txt_margin_small"
+                            android:text="136 6666 6666"/>
+                        <TextView
+                            style="@style/txt_second_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/txt_margin_small"
+                            android:text="杭州市拱墅区石祥路"/>
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_right"/>
+                </RelativeLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="@dimen/item_margin"
                     android:paddingTop="@dimen/item_margin"
-                    android:paddingBottom="@dimen/item_margin"
-                    android:orientation="horizontal">
-                    <com.byb.sc.utils.TextDrawableCenterView
-                        style="@style/txt_second_black"
-                        android:id="@+id/tvUnionMy"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:drawableTop="@mipmap/pic_union_joins"
-                        android:drawablePadding="10dp"
-                        android:text="@string/union_my"
-                        android:background="?attr/selectableItemBackground"/>
-                    <com.byb.sc.utils.TextDrawableCenterView
-                        style="@style/txt_second_black"
-                        android:id="@+id/tvUnionStock"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:drawableTop="@mipmap/pic_union_stock"
-                        android:drawablePadding="10dp"
-                        android:text="@string/union_stock"
-                        android:background="?attr/selectableItemBackground"/>
-                    <com.byb.sc.utils.TextDrawableCenterView
-                        style="@style/txt_second_black"
-                        android:id="@+id/tvUnionBargain"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_horizontal"
-                        android:drawableTop="@mipmap/pic_union_bargain"
-                        android:drawablePadding="10dp"
-                        android:text="@string/union_bargain"
-                        android:background="?attr/selectableItemBackground"/>
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical">
+                        <include layout="@layout/comm_item_label" />
+                        <TextView
+                            style="@style/txt_first_black_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/txt_margin"
+                            android:text="@string/union_service"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/item_margin"
+                        android:paddingBottom="@dimen/item_margin"
+                        android:orientation="horizontal">
+                        <com.byb.sc.utils.TextDrawableCenterView
+                            style="@style/txt_second_black"
+                            android:id="@+id/tvUnionMy"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:drawableTop="@mipmap/pic_union_joins"
+                            android:drawablePadding="10dp"
+                            android:text="@string/union_my"
+                            android:background="?attr/selectableItemBackground"/>
+                        <com.byb.sc.utils.TextDrawableCenterView
+                            style="@style/txt_second_black"
+                            android:id="@+id/tvUnionStock"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:drawableTop="@mipmap/pic_union_stock"
+                            android:drawablePadding="10dp"
+                            android:text="@string/union_stock"
+                            android:background="?attr/selectableItemBackground"/>
+                        <com.byb.sc.utils.TextDrawableCenterView
+                            style="@style/txt_second_black"
+                            android:id="@+id/tvUnionBargain"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:drawableTop="@mipmap/pic_union_bargain"
+                            android:drawablePadding="10dp"
+                            android:text="@string/union_bargain"
+                            android:background="?attr/selectableItemBackground"/>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:layout_marginTop="@dimen/item_margin"
-            android:paddingTop="@dimen/item_margin"
-            android:paddingBottom="@dimen/activity_horizontal_margin"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:gravity="center_vertical">
-                <include layout="@layout/comm_item_label" />
-                <TextView
-                    style="@style/txt_first_black"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/txt_margin"
-                    android:text="@string/union_car_recommend"/>
+                    android:background="@android:color/white"
+                    android:layout_marginTop="@dimen/item_margin"
+                    android:paddingTop="@dimen/item_margin"
+                    android:paddingBottom="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="@dimen/item_margin"
+                        android:gravity="center_vertical">
+                        <include layout="@layout/comm_item_label" />
+                        <TextView
+                            style="@style/txt_first_black_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/txt_margin"
+                            android:text="@string/union_company_recommend"/>
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false">
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/vpGaller"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="50dp"
+                            android:clipChildren="false"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="@dimen/item_margin"
+                    android:paddingTop="@dimen/item_margin"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="@dimen/item_margin">
+                        <include layout="@layout/comm_item_label" />
+                        <TextView
+                            style="@style/txt_first_black_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/txt_margin"
+                            android:text="@string/union_car_recommend"/>
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants">
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/carRecommendRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:background="@color/divide_gray">
+                    <TextView
+                        style="@style/home_head_flex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/look_more"/>
+                </LinearLayout>
+
             </LinearLayout>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/carRecommendRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/item_margin"
-                android:paddingBottom="@dimen/item_margin"/>
-        </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

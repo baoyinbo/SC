@@ -3,6 +3,8 @@
     <string name="press_again_exit">再按一次退出</string>
     <string name="pull_up_over">已经到底啦～</string>
 
+    <string name="look_more">查看更多</string>
+
     <string name="tab_home">首页</string>
     <string name="tab_union">联盟</string>
     <string name="tab_find">发现</string>
@@ -29,6 +31,7 @@
     <string name="union_my">我的联盟</string>
     <string name="union_stock">联盟库存</string>
     <string name="union_bargain">限时特价</string>
+    <string name="union_company_recommend">商家推荐</string>
     <string name="union_car_recommend">联盟车辆推荐</string>
 
 </resources>

@@ -26,7 +26,7 @@
             android:gravity="center_vertical">
             <include layout="@layout/comm_item_label" />
             <TextView
-                style="@style/txt_first_black"
+                style="@style/txt_first_black_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/txt_margin"
@@ -102,7 +102,7 @@
             android:gravity="center_vertical">
             <include layout="@layout/comm_item_label" />
             <TextView
-                style="@style/txt_first_black"
+                style="@style/txt_first_black_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/txt_margin"
@@ -165,7 +165,7 @@
             android:gravity="center_vertical">
             <include layout="@layout/comm_item_label" />
             <TextView
-                style="@style/txt_first_black"
+                style="@style/txt_first_black_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/txt_margin"

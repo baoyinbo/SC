@@ -18,8 +18,8 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:background="@drawable/actionbar_shadow_up"
+        android:background="@color/divide_gray"
         android:layout_gravity="bottom"
         android:layout_marginBottom="@dimen/bottombar_wechat_height"
-        android:layout_height="wrap_content"/>
+        android:layout_height="1dp"/>
 </FrameLayout>
