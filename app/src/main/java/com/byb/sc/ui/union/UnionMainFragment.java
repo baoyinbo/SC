@@ -121,15 +121,6 @@ public class UnionMainFragment extends BaseMainFragment implements SwipeRefreshL
 
 
     private void initCompanyRecommendView() {
-//        int pagerWidth = (int) (getResources().getDisplayMetrics().widthPixels * 3.0f / 5.0f);
-//        ViewGroup.LayoutParams lp = vpGaller.getLayoutParams();
-//        if (lp == null) {
-//            lp = new ViewGroup.LayoutParams(pagerWidth, ViewGroup.LayoutParams.MATCH_PARENT);
-//        } else {
-//            lp.width = pagerWidth;
-//        }
-//        vpGaller.setLayoutParams(lp);
-
         vpGaller.setOffscreenPageLimit(3);
         vpGaller.setPageTransformer(true, new ScalePagerTransformer());
         //设置Pager之间的间距
