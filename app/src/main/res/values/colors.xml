@@ -5,6 +5,10 @@
     <color name="colorAccent">#536DFE</color>
     <color name="bg_app">#F5F5F5</color>
 
+    <!--涟绮颜色,淡色-->
+    <color name="ripple">#7Faaaaaa</color>
+    <!--白色点击色-->
+    <color name="white_pressed">#cceeeeee</color>
 
     <color name="tab_unselect">#c9c9c9</color>
     <color name="bg_btn">#dadada</color>

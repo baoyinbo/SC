@@ -25,4 +25,10 @@
     <string name="company_poster">营销海报</string>
     <string name="sc_shop">帅车商城</string>
 
+    <string name="union_service">联盟服务</string>
+    <string name="union_my">我的联盟</string>
+    <string name="union_stock">联盟库存</string>
+    <string name="union_bargain">限时特价</string>
+    <string name="union_car_recommend">联盟车辆推荐</string>
+
 </resources>

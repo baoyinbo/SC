@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/item_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:id="@+id/ivCarPic"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/pic_car"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivCarPic"
+        android:layout_marginLeft="@dimen/item_margin"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/txt_first_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一汽大众蔚领2018款豪华版"/>
+
+        <TextView
+            style="@style/txt_second_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/txt_margin"
+            android:text="2017-06 / 10.0万公里"/>
+
+        <TextView
+            style="@style/txt_second_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/txt_margin_small"
+            android:text="15.6万"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
