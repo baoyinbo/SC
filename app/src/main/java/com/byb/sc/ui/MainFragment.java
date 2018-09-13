@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.byb.sc.R;
+import com.byb.sc.ui.find.FindMainFragment;
 import com.byb.sc.ui.home.HomeMainFragment;
+import com.byb.sc.ui.my.MyMainFragment;
+import com.byb.sc.ui.union.UnionMainFragment;
 import com.byb.sc.ui.view.bar.BottomBar;
 import com.byb.sc.ui.view.bar.BottomBarTab;
 
@@ -50,11 +53,12 @@ public class MainFragment extends SupportFragment {
         SupportFragment firstFragment = findChildFragment(HomeMainFragment.class);
         if (firstFragment == null) {
             fragments[HOME] = HomeMainFragment.newInstance();
-            fragments[SORCE] = HomeMainFragment.newInstance();
-            fragments[FIND] = HomeMainFragment.newInstance();
-            fragments[MY] = HomeMainFragment.newInstance();
+            fragments[SORCE] = UnionMainFragment.newInstance();
+            fragments[FIND] = FindMainFragment.newInstance();
+            fragments[MY] = MyMainFragment.newInstance();
 
             loadMultipleRootFragment(R.id.fl_tab_container, HOME,
+                    fragments[HOME],
                     fragments[SORCE],
                     fragments[FIND],
                     fragments[MY]);
@@ -63,9 +67,9 @@ public class MainFragment extends SupportFragment {
 
             // 这里我们需要拿到mFragments的引用
             fragments[HOME] = firstFragment;
-            fragments[SORCE] = findChildFragment(HomeMainFragment.class);
-            fragments[FIND] = findChildFragment(HomeMainFragment.class);
-            fragments[MY] = findChildFragment(HomeMainFragment.class);
+            fragments[SORCE] = findChildFragment(UnionMainFragment.class);
+            fragments[FIND] = findChildFragment(FindMainFragment.class);
+            fragments[MY] = findChildFragment(MyMainFragment.class);
         }
     }
 
@@ -80,7 +84,7 @@ public class MainFragment extends SupportFragment {
                 .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_my, getString(R.string.tab_my)));
 
         // 模拟未读消息
-        mBottomBar.getItem(MY).setUnreadCount(9);
+//        mBottomBar.getItem(MY).setUnreadCount(9);
 
         mBottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
             @Override
