@@ -13,4 +13,10 @@
     <dimen name="search_height">32dp</dimen>
     <dimen name="home_head_flex">42dp</dimen>
     <dimen name="home_head_toolbar">32dp</dimen>
+
+    <!--普通模块间距-->
+    <dimen name="item_margin">12dp</dimen>
+
+    <!--文字之间间距-->
+    <dimen name="txt_margin">8dp</dimen>
 </resources>

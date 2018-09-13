@@ -7,14 +7,22 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseMainFragment;
+import com.byb.sc.ui.home.adapter.HomeMainAdapter;
+import com.byb.sc.ui.home.adapter.HomeRollViewPagerAdapter;
+import com.jude.rollviewpager.RollPagerView;
+import com.jude.rollviewpager.hintview.ColorPointHintView;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +34,7 @@ import butterknife.ButterKnife;
  * @date: 2018/9/12 下午3:12
  */
 
-public class HomeMainFragment extends BaseMainFragment {
+public class HomeMainFragment extends BaseMainFragment implements SwipeRefreshLayout.OnRefreshListener {
     @BindView(R.id.activityMain) CoordinatorLayout activityMain;
     @BindView(R.id.appBarLayout) AppBarLayout appBarLayout;
     @BindView(R.id.refreshLayout) SwipeRefreshLayout refreshLayout;
@@ -41,11 +49,18 @@ public class HomeMainFragment extends BaseMainFragment {
     @BindView(R.id.ivHomeSearch2) ImageView ivHomeSearch2;
 
     @BindView(R.id.toolbar1) View toolbar1;
-    @BindView(R.id.llSearch) View llSearch;     //搜索栏
+    @BindView(R.id.llSearch) LinearLayout llSearch;     //搜索栏
     @BindView(R.id.ivHomeStore1) ImageView ivHomeStore1;
     @BindView(R.id.ivHomeCarAdd1) ImageView ivHomeCarAdd1;
     @BindView(R.id.ivHomeCustomer1) ImageView ivHomeCustomer1;
     @BindView(R.id.ivHomeSub1) ImageView ivHomeSub1;
+
+    /**
+     * headerview
+     */
+    private RollPagerView rollPagerView;
+    private HomeMainAdapter mainAdapter;
+    private HomeRollViewPagerAdapter rollViewPagerAdapter;
 
     public static HomeMainFragment newInstance() {
 
@@ -69,6 +84,7 @@ public class HomeMainFragment extends BaseMainFragment {
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
+
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
@@ -103,18 +119,47 @@ public class HomeMainFragment extends BaseMainFragment {
             }
         });
 
+        refreshLayout.setOnRefreshListener(this);
 
-        
+        mainAdapter = new HomeMainAdapter(getContext(), new ArrayList<String>());
+        mainAdapter.addHeaderView(initHeaderView());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(mainAdapter);
+
+
     }
 
 
+    /**
+     * 初始化适配器headerview
+     * @return
+     */
+    private View initHeaderView() {
+        View headerView = View.inflate(getContext(), R.layout.layout_home_head, null);
+        rollPagerView = headerView.findViewById(R.id.rollPagerView);
+        rollPagerView.setHintView(new ColorPointHintView(this.getContext(), Color.WHITE, 0xccddd7d2));
+        rollViewPagerAdapter = new HomeRollViewPagerAdapter(rollPagerView);
+        rollPagerView.setAdapter(rollViewPagerAdapter);
+        return headerView;
+    }
+
+    @Override
+    public void onRefresh() {
+        refreshLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refreshLayout.setRefreshing(false);
+            }
+        }, 2500);
+    }
 
     private void setToolbar1Alpha(int alpha) {
         ivHomeStore1.getDrawable().setAlpha(alpha);
         ivHomeCarAdd1.getDrawable().setAlpha(alpha);
         ivHomeCustomer1.getDrawable().setAlpha(alpha);
         ivHomeSub1.getDrawable().setAlpha(alpha);
-        llSearch.setAlpha(alpha);
+        llSearch.getBackground().setAlpha(alpha);
     }
 
     private void setToolbar2Alpha(int alpha) {

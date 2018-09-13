@@ -75,8 +75,8 @@ public class MainFragment extends SupportFragment {
 
         mBottomBar
                 .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_home, getString(R.string.tab_home)))
-                .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_source, getString(R.string.tab_source)))
-                .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_union, getString(R.string.tab_find)))
+                .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_union, getString(R.string.tab_union)))
+                .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_find, getString(R.string.tab_find)))
                 .addItem(new BottomBarTab(_mActivity, R.mipmap.tab_my, getString(R.string.tab_my)));
 
         // 模拟未读消息

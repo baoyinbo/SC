@@ -16,4 +16,15 @@
         <item name="android:textColor">@color/txt_white</item>
     </style>
 
+    <style name="txt_first_black">
+        <item name="android:textSize">@dimen/txt_first</item>
+        <item name="android:textColor">@color/txt_first_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="txt_second_black">
+        <item name="android:textSize">@dimen/txt_second</item>
+        <item name="android:textColor">@color/txt_first_title</item>
+    </style>
+
 </resources>

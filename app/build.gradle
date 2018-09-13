@@ -37,4 +37,7 @@ dependencies {
 
     //recyclerView适配器
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.8'
+
+    //图片滚动
+    compile 'com.jude:rollviewpager:1.4.6'
 }
