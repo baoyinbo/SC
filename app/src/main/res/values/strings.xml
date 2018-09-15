@@ -43,5 +43,15 @@
     <string name="my_feedback">意见反馈</string>
     <string name="my_contack">联系客服</string>
     <string name="my_about">关于帅车</string>
-
+    
+    <string name="com_logo">企业LOGO</string>
+    <string name="com_full_name">企业全称</string>
+    <string name="com_short_name">企业简称</string>
+    <string name="com_zcode">企业二维码</string>
+    <string name="com_onwer">企业负责人</string>
+    <string name="com_owner_phone">负责人电话</string>
+    <string name="com_serve_phone">服务电话</string>
+    <string name="com_area">所属地区</string>
+    <string name="com_detail">详细地址</string>
+    <string name="com_introduction">企业简介</string>
 </resources>

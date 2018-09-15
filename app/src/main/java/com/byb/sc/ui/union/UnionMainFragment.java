@@ -20,7 +20,9 @@ import com.byb.sc.R;
 import com.byb.sc.base.BaseMainFragment;
 import com.byb.sc.model.CompanyModel;
 import com.byb.sc.model.StockCarModel;
+import com.byb.sc.ui.MainFragment;
 import com.byb.sc.ui.adapter.UnionCarAdapter;
+import com.byb.sc.ui.company.CompanyDetailFragment;
 import com.byb.sc.ui.union.adapter.CompanyRecommendViewPagerAdapter;
 import com.byb.sc.ui.view.ScalePagerTransformer;
 import com.byb.sc.utils.ScreenUtils;
@@ -135,7 +137,8 @@ public class UnionMainFragment extends BaseMainFragment implements SwipeRefreshL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rlCompany:
-
+                ((MainFragment) getParentFragment().getParentFragment())
+                        .startBrotherFragment(CompanyDetailFragment.newInstance(0l));
                 break;
         }
 

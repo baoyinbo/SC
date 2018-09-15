@@ -180,4 +180,5 @@
             android:scaleType="centerCrop"
             android:src="@mipmap/banner_2"/>
     </LinearLayout>
+    <include layout="@layout/base_layout_footer" />
 </LinearLayout>

@@ -63,7 +63,13 @@
                             android:text="杭州市拱墅区石祥路"/>
                     </LinearLayout>
 
-
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:src="@mipmap/pic_zcode"/>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -209,14 +215,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:background="@color/divide_gray">
+                    android:background="@android:color/white">
                     <TextView
-                        style="@style/home_head_flex"
+                        style="@style/txt_second_black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/look_more"/>
                 </LinearLayout>
-
+                <include layout="@layout/base_layout_footer" />
             </LinearLayout>
         </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
