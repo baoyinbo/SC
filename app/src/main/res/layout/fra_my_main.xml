@@ -129,7 +129,7 @@
                         android:src="@mipmap/ic_my_comployee"/>
 
                     <TextView
-                        style="@style/txt_first_black"
+                        style="@style/txt_detail_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/ivComployee"
@@ -162,7 +162,7 @@
                         android:src="@mipmap/ic_my_job"/>
 
                     <TextView
-                        style="@style/txt_first_black"
+                        style="@style/txt_detail_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/ivJob"
@@ -200,7 +200,7 @@
                         android:src="@mipmap/ic_my_feedback"/>
 
                     <TextView
-                        style="@style/txt_first_black"
+                        style="@style/txt_detail_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/ivFeedback"
@@ -233,7 +233,7 @@
                         android:src="@mipmap/ic_my_contact"/>
 
                     <TextView
-                        style="@style/txt_first_black"
+                        style="@style/txt_detail_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/ivContact"
@@ -266,7 +266,7 @@
                         android:src="@mipmap/ic_my_about"/>
 
                     <TextView
-                        style="@style/txt_first_black"
+                        style="@style/txt_detail_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@id/ivAbout"

@@ -3,4 +3,6 @@
     <dimen name="txt_first">16dp</dimen>
     <dimen name="txt_second">12dp</dimen>
     <dimen name="txt_third">10dp</dimen>
+
+    <dimen name="txt_item_context">14dp</dimen>
 </resources>

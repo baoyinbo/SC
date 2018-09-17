@@ -40,12 +40,12 @@
 
     <!--详情 条目-->
     <style name="txt_detail_item">
-        <item name="android:textSize">@dimen/txt_second</item>
+        <item name="android:textSize">@dimen/txt_item_context</item>
         <item name="android:textColor">@color/txt_first_title</item>
     </style>
     <!--详情 内容-->
     <style name="txt_detail_context">
-        <item name="android:textSize">@dimen/txt_second</item>
+        <item name="android:textSize">@dimen/txt_item_context</item>
         <item name="android:textColor">@color/txt_second_title</item>
     </style>
 
