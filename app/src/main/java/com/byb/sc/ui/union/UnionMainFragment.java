@@ -137,7 +137,7 @@ public class UnionMainFragment extends BaseMainFragment implements SwipeRefreshL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rlCompany:
-                ((MainFragment) getParentFragment().getParentFragment())
+                ((MainFragment) getParentFragment())
                         .startBrotherFragment(CompanyDetailFragment.newInstance(0l));
                 break;
         }

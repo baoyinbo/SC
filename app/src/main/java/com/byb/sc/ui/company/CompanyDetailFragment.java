@@ -3,6 +3,7 @@ package com.byb.sc.ui.company;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.base.BaseMainFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -25,6 +27,7 @@ public class CompanyDetailFragment extends BaseBackFragment {
     private static final String ARG_ID = "company_id";
     private Long companyId;
 
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
 
     public static CompanyDetailFragment newInstance(Long id) {
@@ -51,6 +54,7 @@ public class CompanyDetailFragment extends BaseBackFragment {
     }
 
     private void initView(View view) {
-
+        toolbar.setTitle(R.string.com_detail);
+        initToolbarNav(toolbar);
     }
 }

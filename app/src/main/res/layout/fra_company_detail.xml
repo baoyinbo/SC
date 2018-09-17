@@ -203,7 +203,7 @@
                     style="@style/txt_detail_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/com_detail"/>
+                    android:text="@string/com_address_detail"/>
 
                 <TextView
                     style="@style/txt_detail_context"
@@ -219,6 +219,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="@dimen/detail_item_height"
                 android:layout_marginTop="@dimen/item_margin"
+                android:layout_marginBottom="@dimen/item_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:background="@android:color/white"
@@ -236,6 +237,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:lineSpacingExtra="@dimen/txt_line_space"
+                    android:paddingBottom="@dimen/txt_margin"
                     android:text="浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅浙江杭州拱墅"/>
             </LinearLayout>
 
