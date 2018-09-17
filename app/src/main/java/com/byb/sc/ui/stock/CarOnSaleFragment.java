@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.byb.sc.R;
 import com.byb.sc.model.StockCarModel;
-import com.byb.sc.ui.MainFragment;
 import com.byb.sc.ui.adapter.UnionCarAdapter;
 import com.byb.sc.ui.filter.FilterPriceFragment;
 import com.byb.sc.ui.view.decoration.SpacesItemDecoration;
@@ -26,7 +25,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
