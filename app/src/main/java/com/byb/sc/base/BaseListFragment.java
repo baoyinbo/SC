@@ -18,6 +18,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * 类描述：
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
  * @date: 2018/9/12 下午3:54
  */
 
-public abstract class BaseListFragment extends BaseMainFragment implements SwipeRefreshLayout.OnRefreshListener {
+public abstract class BaseListFragment extends SupportFragment implements SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.refreshLayout) SwipeRefreshLayout refreshLayout;
     @BindView(R.id.recy) RecyclerView recy;

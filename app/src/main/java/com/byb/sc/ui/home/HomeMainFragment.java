@@ -17,8 +17,10 @@ import android.widget.LinearLayout;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseMainFragment;
+import com.byb.sc.ui.MainFragment;
 import com.byb.sc.ui.home.adapter.HomeMainAdapter;
 import com.byb.sc.ui.home.adapter.HomeRollViewPagerAdapter;
+import com.byb.sc.ui.stock.CarStockFragment;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 类描述：
@@ -170,4 +173,13 @@ public class HomeMainFragment extends BaseMainFragment implements SwipeRefreshLa
         ivHomeSearch2.getDrawable().setAlpha(alpha);
     }
 
+    @OnClick({R.id.ivHomeStore1, R.id.ivHomeStore2})
+    protected void onViewClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivHomeStore1:
+            case R.id.ivHomeStore2:
+                ((MainFragment)getParentFragment()).startBrotherFragment(CarStockFragment.newInstance());
+                break;
+        }
+    }
 }
