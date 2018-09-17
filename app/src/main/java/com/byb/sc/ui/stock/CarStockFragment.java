@@ -1,5 +1,6 @@
 package com.byb.sc.ui.stock;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,10 +14,14 @@ import android.view.ViewGroup;
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.ui.company.CompanyDetailFragment;
+import com.byb.sc.ui.filter.FilterPriceFragment;
 import com.byb.sc.ui.stock.adapter.CarStockViewPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import me.yokeyword.fragmentation.ISupportFragment;
+import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * 类描述：企业车辆库存
@@ -67,5 +72,15 @@ public class CarStockFragment extends BaseBackFragment {
         super.onLazyInitView(savedInstanceState);
         viewPager.setAdapter(pagerAdapter);
         tab.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
+        super.onFragmentResult(requestCode, resultCode, data);
     }
 }

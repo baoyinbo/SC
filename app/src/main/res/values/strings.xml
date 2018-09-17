@@ -11,6 +11,11 @@
     <string name="tab_my">我的</string>
 
 
+    <string name="filter_brand">品牌</string>
+    <string name="filter_price">价格</string>
+    <string name="filter_sort">排序</string>
+    <string name="filter_more">更多</string>
+
     <string name="home_store">库存管理</string>
     <string name="home_add_car">车辆发布</string>
     <string name="home_customer_manage">客户管理</string>
