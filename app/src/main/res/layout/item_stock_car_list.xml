@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/item_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_horizontal_margin">
 
     <ImageView
@@ -26,7 +26,7 @@
             style="@style/txt_first_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="一汽大众蔚领2018款手动豪华版"/>
+            android:text="一汽大众蔚领2018款"/>
 
         <TextView
             style="@style/txt_second_black"
@@ -42,6 +42,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/txt_margin_small"
             android:text="15.6万"/>
+
+        <TextView
+            style="@style/txt_detail_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/txt_margin_small"
+            android:text="杭州帅车"/>
 
     </LinearLayout>
 
