@@ -14,6 +14,7 @@ import com.byb.sc.base.BaseMainFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
@@ -56,5 +57,17 @@ public class CompanyDetailFragment extends BaseBackFragment {
     private void initView(View view) {
         toolbar.setTitle(R.string.com_detail);
         initToolbarNav(toolbar);
+    }
+
+    @OnClick({R.id.llZcode})
+    protected void onClick(View view){
+        switch (view.getId()) {
+            case R.id.llZcode:
+                extraTransaction()
+                        .setCustomAnimations(R.anim.v_fragment_enter, R.anim.v_fragment_pop_exit,
+                                R.anim.v_fragment_pop_enter, R.anim.v_fragment_exit)
+                        .start(CompanyZxingFragment.newInstance(0l));
+                break;
+        }
     }
 }

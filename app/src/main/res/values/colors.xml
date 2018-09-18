@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimary">@color/home_head</color>
     <color name="colorPrimaryDark">@color/home_head</color>
     <color name="colorAccent">#536DFE</color>
     <color name="bg_app">#F5F5F5</color>
@@ -21,6 +21,8 @@
 
     <!--文字 按钮 标签等用到的蓝色-->
     <color name="comm_blue">#3997f9</color>
+    <color name="press_blue">#3997ef</color>
+    <color name="btn_disable">#cccccc</color>
 
     <!--选中状态的颜色-->
     <color name="single_select">#f26b31</color>

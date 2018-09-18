@@ -32,4 +32,8 @@
     <dimen name="txt_margin">8dp</dimen>
     <!--文字之间间距-->
     <dimen name="txt_margin_small">2dp</dimen>
+
+    <!--按钮间距-->
+    <dimen name="btn_horizontal_margin">40dp</dimen>
+    <dimen name="btn_vertical_margin">16dp</dimen>
 </resources>

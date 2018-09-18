@@ -40,4 +40,6 @@ dependencies {
 
     //图片滚动
     compile 'com.jude:rollviewpager:1.4.6'
+    //二维码生成
+    compile 'com.google.zxing:core:3.3.0'
 }

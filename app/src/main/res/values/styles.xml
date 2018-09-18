@@ -7,6 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/bg_app</item>
+
+        <!--下面是按钮相关-->
+        <item name="android:buttonStyle">@style/sc_btn_corner_black</item>
+        <item name="buttonStyle">@style/sc_btn_corner_black</item>
+        <item name="android:buttonStyleSmall">@style/sc_btn_circle_small</item>
+        <item name="buttonStyleSmall">@style/sc_btn_circle_small</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

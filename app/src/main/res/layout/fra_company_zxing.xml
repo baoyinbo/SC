@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/btn_horizontal_margin"
+            android:layout_marginLeft="@dimen/btn_horizontal_margin"
+            android:layout_marginRight="@dimen/btn_horizontal_margin"
+            android:layout_marginBottom="@dimen/btn_vertical_margin"
+            app:cardCornerRadius="4dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/rlInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height"
+                    android:paddingLeft="@dimen/txt_margin"
+                    android:paddingRight="@dimen/txt_margin">
+                    <TextView
+                        style="@style/txt_first_black_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="帅车网络"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/pic_default_head"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/rlInfo"
+                    android:background="@color/divide_gray"/>
+
+                <ImageView
+                    android:id="@+id/ivZxing"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    style="@style/txt_second_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/item_margin"
+                    android:text="可在微信扫一扫进入我的微店"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/btn_horizontal_margin"
+            android:layout_marginRight="@dimen/btn_horizontal_margin"
+            android:layout_marginBottom="@dimen/btn_vertical_margin">
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/item_margin"
+                android:background="@drawable/btn_selector_white"
+                style="@style/btn_black"
+                android:text="@string/btn_save_2_phone"/>
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_share"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

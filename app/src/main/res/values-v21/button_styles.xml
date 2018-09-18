@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="sc_btn_corner_black" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_selector_blue</item>
+        <item name="android:textAppearance">@style/btn_white</item>
+        <item name="android:minHeight">44dip</item>
+        <item name="android:minWidth">80dip</item>
+    </style>
+
+
+    <style name="sc_btn_circle_small" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_selector_blue</item>
+        <item name="android:textAppearance">@style/btn_white</item>
+        <item name="android:selectable">false</item>
+        <item name="android:minHeight">26dip</item>
+        <item name="android:minWidth">80dip</item>
+    </style>
+
+</resources>

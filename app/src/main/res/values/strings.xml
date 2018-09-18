@@ -9,7 +9,10 @@
     <string name="tab_union">联盟</string>
     <string name="tab_find">发现</string>
     <string name="tab_my">我的</string>
-
+    
+    
+    <string name="btn_save_2_phone">保存到手机</string>
+    <string name="btn_share">分享</string>
 
     <string name="filter_brand">品牌</string>
     <string name="filter_price">价格</string>

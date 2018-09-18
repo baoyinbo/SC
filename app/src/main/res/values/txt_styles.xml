@@ -49,4 +49,15 @@
         <item name="android:textColor">@color/txt_second_title</item>
     </style>
 
+
+    <!--按钮上的文字-->
+    <style name="btn_white">
+        <item name="android:textSize">@dimen/txt_first</item>
+        <item name="android:textColor">@color/txt_white</item>
+    </style>
+    <style name="btn_black">
+        <item name="android:textSize">@dimen/txt_first</item>
+        <item name="android:textColor">@color/txt_first_title</item>
+    </style>
+
 </resources>
