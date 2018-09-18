@@ -33,4 +33,14 @@ public class BaseBackFragment extends SwipeBackFragment {
             }
         });
     }
+
+    protected void initToolbarClose(Toolbar toolbar) {
+        toolbar.setNavigationIcon(R.mipmap.ic_close);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _mActivity.onBackPressed();
+            }
+        });
+    }
 }

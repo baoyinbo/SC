@@ -22,6 +22,9 @@
     <!--文字 按钮 标签等用到的蓝色-->
     <color name="comm_blue">#3997f9</color>
 
+    <!--选中状态的颜色-->
+    <color name="single_select">#f26b31</color>
+
     <!--文字颜色-->
     <!--一级标题 黑色-->
     <color name="txt_first_title">#333333</color>
@@ -33,6 +36,7 @@
     <!--金色-->
     <color name="txt_gold">#f0ae52</color>
 
+    <!--文字白色-->
     <color name="txt_white">#eeeeee</color>
     <!--红色-->
     <color name="text_red">#f05322</color>

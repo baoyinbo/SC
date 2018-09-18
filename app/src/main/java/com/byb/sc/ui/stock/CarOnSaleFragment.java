@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.byb.sc.R;
+import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.model.StockCarModel;
 import com.byb.sc.ui.adapter.UnionCarAdapter;
 import com.byb.sc.ui.filter.FilterPriceFragment;
@@ -25,7 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import me.yokeyword.fragmentation.SupportFragment;
+import me.yokeyword.fragmentation.ExtraTransaction;
 
 /**
  * 类描述：
@@ -34,7 +35,7 @@ import me.yokeyword.fragmentation.SupportFragment;
  * @date: 2018/9/17 下午4:39
  */
 
-public class CarOnSaleFragment extends SupportFragment implements SwipeRefreshLayout.OnRefreshListener {
+public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshLayout.OnRefreshListener {
     private static final int FILTER_PRICE = 1000;
 
     @BindView(R.id.refreshLayout) SwipeRefreshLayout refreshLayout;
@@ -90,7 +91,8 @@ public class CarOnSaleFragment extends SupportFragment implements SwipeRefreshLa
 
                 break;
             case R.id.llFilterPrice:
-                ((CarStockFragment)getParentFragment()).startForResult(FilterPriceFragment.newInstance(), FILTER_PRICE);
+                ((CarStockFragment)getParentFragment())
+                        .startForResult(FilterPriceFragment.newInstance(getString(R.string.filter_price)), FILTER_PRICE);
                 break;
             case R.id.llFilterSort:
 
