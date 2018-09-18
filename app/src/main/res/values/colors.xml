@@ -21,7 +21,7 @@
 
     <!--文字 按钮 标签等用到的蓝色-->
     <color name="comm_blue">#3997f9</color>
-    <color name="press_blue">#3997ef</color>
+    <color name="press_blue">#3997d1</color>
     <color name="btn_disable">#cccccc</color>
 
     <!--选中状态的颜色-->
