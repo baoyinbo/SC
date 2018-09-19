@@ -37,13 +37,14 @@
             android:text="@string/btn_Ok"/>
 
         <TextView
+            android:id="@+id/tvCustomer"
             style="@style/txt_select_big"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/btnOk"
             android:layout_marginRight="@dimen/txt_margin"
             android:layout_centerVertical="true"
-            android:text="12-15"/>
+            android:text="不限"/>
     </RelativeLayout>
 
     <com.byb.sc.ui.view.rangeseekbar.RangeSeekBar

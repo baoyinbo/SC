@@ -12,11 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.config.FilterPriceEnum;
 import com.byb.sc.model.FilterSingleModel;
+import com.byb.sc.ui.view.rangeseekbar.OnRangeChangedListener;
 import com.byb.sc.ui.view.rangeseekbar.RangeSeekBar;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -51,6 +53,10 @@ public class FilterPriceFragment extends BaseBackFragment {
      * 双向滑动seekbar
      */
     private RangeSeekBar seekBar;
+    /**
+     * 自定义选择
+     */
+    private TextView tvCustomer;
 
     public static FilterPriceFragment newInstance(String title) {
         Bundle args = new Bundle();
@@ -128,6 +134,7 @@ public class FilterPriceFragment extends BaseBackFragment {
         View headerView = View.inflate(getContext(), R.layout.layout_comm_range_seekbar, null);
 
         seekBar = headerView.findViewById(R.id.seekBar);
+        tvCustomer = headerView.findViewById(R.id.tvCustomer);
 
         seekBar.getLeftSeekBar().setTypeface(Typeface.DEFAULT_BOLD);
         /**
@@ -154,6 +161,32 @@ public class FilterPriceFragment extends BaseBackFragment {
          */
         CharSequence[] cs = new CharSequence[]{"0", "10", "20", "30", "40", "50", "不限" };
         seekBar.setTickMarkTextArray(cs);
+
+        seekBar.setOnRangeChangedListener(new OnRangeChangedListener() {
+            @Override
+            public void onRangeChanged(RangeSeekBar view, float leftValue, float rightValue, boolean isFromUser) {
+
+                if (leftValue == 0 && rightValue != 60) {
+                    tvCustomer.setText((int) rightValue + "以下");
+                } else if (leftValue == 0 && rightValue == 60) {
+                    tvCustomer.setText("不限");
+                } else if (leftValue != 0 && rightValue != 60) {
+                    tvCustomer.setText((int)leftValue + "-" + (int)rightValue);
+                } else {
+                    tvCustomer.setText((int)leftValue + "以上");
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(RangeSeekBar view, boolean isLeft) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(RangeSeekBar view, boolean isLeft) {
+
+            }
+        });
 
         return headerView;
     }
