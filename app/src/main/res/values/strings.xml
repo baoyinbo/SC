@@ -15,6 +15,10 @@
     <string name="btn_share">分享</string>
     <string name="btn_Ok">确定</string>
 
+
+    <string name="edit_hint_input">请输入</string>
+    <string name="edit_hint_select">请选择</string>
+
     <string name="filter_brand">品牌</string>
     <string name="filter_price">价格</string>
     <string name="filter_sort">排序</string>
@@ -64,4 +68,20 @@
     <string name="com_area">所属地区</string>
     <string name="com_address_detail">详细地址</string>
     <string name="com_introduction">企业简介</string>
+
+
+    <string name="car_add">添加车辆</string>
+    <string name="car_edit">编辑车辆</string>
+    <string name="car_pic">车辆图片</string>
+    <string name="car_base_info">基本信息(带*为必填项)</string>
+    <string name="car_type">车辆类型</string>
+    <string name="car_new">新车</string>
+    <string name="car_old">二手车</string>
+    <string name="car_brand">品牌车型</string>
+    <string name="car_manufacture">出厂日期</string>
+    <string name="car_mileage">表显里程</string>
+    <string name="car_color">车身颜色</string>
+    <string name="car_key_num">钥匙数量</string>
+    <string name="car_location">车所在地</string>
+
 </resources>

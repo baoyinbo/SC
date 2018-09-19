@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import com.byb.sc.R;
 import com.byb.sc.base.BaseMainFragment;
 import com.byb.sc.ui.MainFragment;
+import com.byb.sc.ui.car.CarEditFragment;
 import com.byb.sc.ui.home.adapter.HomeMainAdapter;
 import com.byb.sc.ui.home.adapter.HomeRollViewPagerAdapter;
 import com.byb.sc.ui.stock.CarStockFragment;
@@ -173,12 +174,23 @@ public class HomeMainFragment extends BaseMainFragment implements SwipeRefreshLa
         ivHomeSearch2.getDrawable().setAlpha(alpha);
     }
 
-    @OnClick({R.id.ivHomeStore1, R.id.ivHomeStore2})
+    @OnClick({R.id.ivHomeStore1, R.id.ivHomeStore2, R.id.ivHomeCarAdd1, R.id.ivHomeCarAdd2})
     protected void onViewClick(View view) {
         switch (view.getId()) {
             case R.id.ivHomeStore1:
             case R.id.ivHomeStore2:
+                /**
+                 * 库存
+                 */
                 ((MainFragment)getParentFragment()).startBrotherFragment(CarStockFragment.newInstance());
+                break;
+
+            case R.id.ivHomeCarAdd1:
+            case R.id.ivHomeCarAdd2:
+                /**
+                 * 添加车辆
+                 */
+                ((MainFragment)getParentFragment()).startBrotherFragment(CarEditFragment.newInstance());
                 break;
         }
     }

@@ -167,13 +167,13 @@ public class FilterPriceFragment extends BaseBackFragment {
             public void onRangeChanged(RangeSeekBar view, float leftValue, float rightValue, boolean isFromUser) {
 
                 if (leftValue == 0 && rightValue != 60) {
-                    tvCustomer.setText((int) rightValue + "以下");
+                    tvCustomer.setText((int) rightValue + "万以下");
                 } else if (leftValue == 0 && rightValue == 60) {
                     tvCustomer.setText("不限");
                 } else if (leftValue != 0 && rightValue != 60) {
-                    tvCustomer.setText((int)leftValue + "-" + (int)rightValue);
+                    tvCustomer.setText((int)leftValue + "-" + (int)rightValue + "万");
                 } else {
-                    tvCustomer.setText((int)leftValue + "以上");
+                    tvCustomer.setText((int)leftValue + "万以上");
                 }
             }
 
