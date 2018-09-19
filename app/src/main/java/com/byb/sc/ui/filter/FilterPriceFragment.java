@@ -1,5 +1,6 @@
 package com.byb.sc.ui.filter;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.config.FilterPriceEnum;
 import com.byb.sc.model.FilterSingleModel;
+import com.byb.sc.ui.view.rangeseekbar.RangeSeekBar;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ public class FilterPriceFragment extends BaseBackFragment {
     private static final String TITLE = "title";
     private String title;
 
+
     /**
      * 筛选数据
      */
@@ -43,6 +46,11 @@ public class FilterPriceFragment extends BaseBackFragment {
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.recy) RecyclerView recy;
     private FilterSingleAdapter adapter;
+
+    /**
+     * 双向滑动seekbar
+     */
+    private RangeSeekBar seekBar;
 
     public static FilterPriceFragment newInstance(String title) {
         Bundle args = new Bundle();
@@ -71,6 +79,7 @@ public class FilterPriceFragment extends BaseBackFragment {
         initToolbarClose(toolbar);
         toolbar.setTitle(title);
         adapter = new FilterSingleAdapter(this.getContext(), new ArrayList<FilterSingleModel>());
+        adapter.addHeaderView(initHeader());
         recy.setLayoutManager(new LinearLayoutManager(_mActivity));
         //添加自定义分割线
         DividerItemDecoration divider = new DividerItemDecoration(_mActivity, DividerItemDecoration.VERTICAL);
@@ -113,5 +122,39 @@ public class FilterPriceFragment extends BaseBackFragment {
         super.onLazyInitView(savedInstanceState);
 
         adapter.setNewData(filters);
+    }
+
+    private View initHeader() {
+        View headerView = View.inflate(getContext(), R.layout.layout_comm_range_seekbar, null);
+
+        seekBar = headerView.findViewById(R.id.seekBar);
+
+        seekBar.getLeftSeekBar().setTypeface(Typeface.DEFAULT_BOLD);
+        /**
+         * 设置选中的值类型
+         * "0.00"
+         * "0"
+         */
+        seekBar.setIndicatorTextDecimalFormat("0");
+        /**
+         * 设置范围
+         * interval:最小间隔
+         */
+        seekBar.setRange(0, 60, 5);
+        /**
+         * 设置当前值
+         */
+        seekBar.setValue(0, 60);
+        /**
+         * 设置刻度类型
+         */
+        seekBar.setTickMarkMode(RangeSeekBar.TRICK_MARK_MODE_OTHER);
+        /**
+         * 设置刻度
+         */
+        CharSequence[] cs = new CharSequence[]{"0", "10", "20", "30", "40", "50", "不限" };
+        seekBar.setTickMarkTextArray(cs);
+
+        return headerView;
     }
 }

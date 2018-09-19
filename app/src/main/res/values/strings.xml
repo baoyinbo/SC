@@ -13,6 +13,7 @@
     
     <string name="btn_save_2_phone">保存到手机</string>
     <string name="btn_share">分享</string>
+    <string name="btn_Ok">确定</string>
 
     <string name="filter_brand">品牌</string>
     <string name="filter_price">价格</string>

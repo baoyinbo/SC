@@ -4,20 +4,59 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    
-    <com.byb.sc.ui.view.rangeseekbar.RangeSeekBar
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+        <TextView
+            android:id="@+id/tvContext"
+            style="@style/txt_first_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="自定义价格"/>
+        <TextView
+            style="@style/txt_third_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvContext"
+            android:layout_alignBaseline="@id/tvContext"
+            android:layout_marginLeft="@dimen/txt_margin"
+            android:text="(万元)"/>
+
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/btn_Ok"/>
+
+        <TextView
+            style="@style/txt_select_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btnOk"
+            android:layout_marginRight="@dimen/txt_margin"
+            android:layout_centerVertical="true"
+            android:text="12-15"/>
+    </RelativeLayout>
+
+    <com.byb.sc.ui.view.rangeseekbar.RangeSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        app:rsb_min="-1"
-        app:rsb_max="1"
         app:rsb_mode="range"
         app:rsb_progress_height="4dp"
-        app:rsb_progress_color="@color/colorAccent"
+        app:rsb_progress_color="@color/comm_blue"
         app:rsb_progress_default_color="@color/rsbColorSeekBarDefault"
         app:rsb_tick_mark_text_margin="17dp"
-        app:rsb_tick_mark_mode="number"
         app:rsb_thumb_size="20dp"
         app:rsb_indicator_drawable="@drawable/progress_hint_bg"
         app:rsb_indicator_padding_bottom="10dp"
@@ -26,6 +65,18 @@
         app:rsb_indicator_show_mode="showWhenTouch"
         app:rsb_thumb_drawable="@drawable/thumb_activated"
         app:rsb_thumb_inactivated_drawable="@drawable/thumb_inactivated"
-        app:rsb_thumb_scale_ratio="1.2"/>
+        app:rsb_thumb_scale_ratio="1.5"/>
+
+
+    <TextView
+        style="@style/txt_first_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/txt_margin"
+        android:paddingBottom="@dimen/txt_margin"
+        android:background="@color/divide_gray"
+        android:text="价格区间"/>
+
     
 </LinearLayout>

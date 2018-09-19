@@ -32,6 +32,16 @@
         <item name="android:textColor">@color/txt_first_title</item>
     </style>
 
+    <style name="txt_second_gray">
+        <item name="android:textSize">@dimen/txt_second</item>
+        <item name="android:textColor">@color/txt_second_title</item>
+    </style>
+
+    <style name="txt_third_gray">
+        <item name="android:textSize">@dimen/txt_third</item>
+        <item name="android:textColor">@color/txt_third_title</item>
+    </style>
+
     <style name="txt_first_white_bold">
         <item name="android:textSize">@dimen/txt_first</item>
         <item name="android:textColor">@color/txt_white</item>
@@ -58,6 +68,13 @@
     <style name="btn_black">
         <item name="android:textSize">@dimen/txt_first</item>
         <item name="android:textColor">@color/txt_first_title</item>
+    </style>
+
+
+    <!--选中的文字-->
+    <style name="txt_select_big">
+        <item name="android:textSize">@dimen/txt_first</item>
+        <item name="android:textColor">@color/single_select</item>
     </style>
 
 </resources>
