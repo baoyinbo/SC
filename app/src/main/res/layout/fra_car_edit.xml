@@ -209,7 +209,33 @@
                     android:src="@mipmap/ic_right"/>
             </RelativeLayout>
             <include layout="@layout/comm_divide_line_margin_left" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_item_height"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin">
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/car_in_color"/>
+                <TextView
+                    style="@style/txt_detail_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/car_edit_margin_left"
+                    android:layout_marginRight="@dimen/car_edit_margin_right"
+                    android:hint="@string/edit_hint_select"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_right"/>
+            </RelativeLayout>
+            <include layout="@layout/comm_divide_line_margin_left" />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/detail_item_height"
@@ -250,6 +276,126 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/car_location"/>
+                <TextView
+                    style="@style/txt_detail_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/car_edit_margin_left"
+                    android:layout_marginRight="@dimen/car_edit_margin_right"
+                    android:hint="@string/edit_hint_select"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_right"/>
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/txt_second_gray"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_item_height"
+                android:layout_marginTop="@dimen/item_margin"
+                android:background="@color/divide_gray"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center_vertical"
+                android:text="@string/car_buy_info"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_item_height"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin">
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/car_buy_price"/>
+                <TextView
+                    style="@style/txt_detail_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/car_edit_margin_left"
+                    android:layout_marginRight="@dimen/car_edit_margin_right"
+                    android:hint="@string/edit_hint_input"/>
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="万元"/>
+            </RelativeLayout>
+            <include layout="@layout/comm_divide_line_margin_left" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_item_height"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin">
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/car_invoice_price"/>
+                <TextView
+                    style="@style/txt_detail_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/car_edit_margin_left"
+                    android:layout_marginRight="@dimen/car_edit_margin_right"
+                    android:hint="@string/edit_hint_input"/>
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="万元"/>
+            </RelativeLayout>
+            <include layout="@layout/comm_divide_line_margin_left" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_item_height"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin">
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/car_buyer"/>
+                <TextView
+                    style="@style/txt_detail_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/car_edit_margin_left"
+                    android:layout_marginRight="@dimen/car_edit_margin_right"
+                    android:hint="@string/edit_hint_select"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_right"/>
+            </RelativeLayout>
+            <include layout="@layout/comm_divide_line_margin_left" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_item_height"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin">
+                <TextView
+                    style="@style/txt_detail_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/car_buy_date"/>
                 <TextView
                     style="@style/txt_detail_context"
                     android:layout_width="match_parent"

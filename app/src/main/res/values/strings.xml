@@ -74,6 +74,7 @@
     <string name="car_edit">编辑车辆</string>
     <string name="car_pic">车辆图片</string>
     <string name="car_base_info">基本信息(带*为必填项)</string>
+    <string name="car_buy_info">收购信息(带*为必填项)</string>
     <string name="car_type">车辆类型</string>
     <string name="car_new">新车</string>
     <string name="car_old">二手车</string>
@@ -81,7 +82,13 @@
     <string name="car_manufacture">出厂日期</string>
     <string name="car_mileage">表显里程</string>
     <string name="car_color">车身颜色</string>
+    <string name="car_in_color">内饰颜色</string>
     <string name="car_key_num">钥匙数量</string>
     <string name="car_location">车所在地</string>
+
+    <string name="car_buy_price">收购价</string>
+    <string name="car_invoice_price">发票价</string>
+    <string name="car_buyer">收购员</string>
+    <string name="car_buy_date">收购日期</string>
 
 </resources>
