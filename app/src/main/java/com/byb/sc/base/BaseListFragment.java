@@ -28,7 +28,7 @@ import me.yokeyword.fragmentation.SupportFragment;
  */
 
 public abstract class BaseListFragment extends SupportFragment implements SwipeRefreshLayout.OnRefreshListener {
-
+    @BindView(R.id.multipleStatusView) MultipleStatusView multipleStatusView;
     @BindView(R.id.refreshLayout) SwipeRefreshLayout refreshLayout;
     @BindView(R.id.recy) RecyclerView recy;
     @BindView(R.id.toolbar) Toolbar toolbar;
@@ -71,6 +71,10 @@ public abstract class BaseListFragment extends SupportFragment implements SwipeR
 
     public SwipeRefreshLayout getRefreshLayout() {
         return refreshLayout;
+    }
+
+    public MultipleStatusView getMultipleStatusView() {
+        return multipleStatusView;
     }
 
     protected void setAdapter(BaseQuickAdapter adapter) {
