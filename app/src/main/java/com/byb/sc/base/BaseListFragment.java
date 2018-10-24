@@ -61,6 +61,9 @@ public abstract class BaseListFragment extends SupportFragment implements SwipeR
 
     }
 
+    public Toolbar getToolbar() {
+        return toolbar;
+    }
 
     public RecyclerView getRecyclerView() {
         return recy;
