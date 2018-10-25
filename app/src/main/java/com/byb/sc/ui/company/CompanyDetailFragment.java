@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
-import com.byb.sc.base.BaseMainFragment;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

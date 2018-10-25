@@ -1,5 +1,6 @@
 package com.byb.sc.ui.stock.adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -39,5 +40,10 @@ public class CarStockViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return mTitles[position];
+    }
+
+
+    public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
+        CarOnSaleFragment.fragmentResult(requestCode, resultCode, data);
     }
 }

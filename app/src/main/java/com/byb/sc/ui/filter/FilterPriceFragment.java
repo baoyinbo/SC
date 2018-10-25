@@ -102,6 +102,10 @@ public class FilterPriceFragment extends BaseBackFragment {
                 adapter.getItem(i).setSelect(true);
                 adapter.notifyDataSetChanged();
 
+                Bundle bundle = new Bundle();
+                bundle.putString("a", "abcd");
+                setFragmentResult(RESULT_OK, bundle);
+                _mActivity.onBackPressed();
             }
         });
     }

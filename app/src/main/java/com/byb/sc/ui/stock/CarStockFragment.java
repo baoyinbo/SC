@@ -1,5 +1,6 @@
 package com.byb.sc.ui.stock;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.ui.company.CompanyDetailFragment;
 import com.byb.sc.ui.filter.FilterPriceFragment;
 import com.byb.sc.ui.stock.adapter.CarStockViewPagerAdapter;
+import com.byb.sc.utils.ToastShowUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,6 +67,24 @@ public class CarStockFragment extends BaseBackFragment {
 
         pagerAdapter = new CarStockViewPagerAdapter(getChildFragmentManager(),
                 "在库车辆", "已售车辆");
+
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                ToastShowUtils.showTextToast("" + position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     @Override
@@ -74,13 +94,10 @@ public class CarStockFragment extends BaseBackFragment {
         tab.setupWithViewPager(viewPager);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     @Override
     public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
         super.onFragmentResult(requestCode, resultCode, data);
+        pagerAdapter.onFragmentResult(requestCode, resultCode, data);
     }
 }

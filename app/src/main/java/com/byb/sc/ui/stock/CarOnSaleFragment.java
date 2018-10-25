@@ -1,5 +1,6 @@
 package com.byb.sc.ui.stock;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,6 +20,7 @@ import com.byb.sc.ui.adapter.UnionCarAdapter;
 import com.byb.sc.ui.filter.FilterPriceFragment;
 import com.byb.sc.ui.view.decoration.SpacesItemDecoration;
 import com.byb.sc.utils.ResourceUtils;
+import com.byb.sc.utils.ToastShowUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,13 +116,15 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
         }, 2500);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
-    @Override
-    public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
-        super.onFragmentResult(requestCode, resultCode, data);
+    public static void fragmentResult(int requestCode, int resultCode, Bundle data) {
+        if (resultCode == Activity.RESULT_OK) {
+            switch (requestCode) {
+                case FILTER_PRICE:
+                    //价格筛选
+                    ToastShowUtils.showTextToast(data.getString("a"));
+                    break;
+            }
+        }
     }
 }
