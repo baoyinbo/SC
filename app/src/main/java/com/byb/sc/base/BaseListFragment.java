@@ -41,23 +41,26 @@ public abstract class BaseListFragment extends SupportFragment implements SwipeR
         View view = inflater.inflate(R.layout.base_fra_recyclerview, container, false);
         ButterKnife.bind(this, view);
 
-        return view;
-    }
-
-    @Override
-    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
-        super.onLazyInitView(savedInstanceState);
         refreshLayout.setOnRefreshListener(this);
-
         recy.setLayoutManager(new LinearLayoutManager(_mActivity));
         recy.setHasFixedSize(true);
-        final int space = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 0.5f, getResources().getDisplayMetrics());
+        final int space = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5.0f,
+                getResources().getDisplayMetrics());
         recy.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                 outRect.set(0, 0, 0, space);
             }
         });
+
+
+        onInitView();
+        return view;
+    }
+
+    @Override
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
 
     }
 
@@ -100,6 +103,11 @@ public abstract class BaseListFragment extends SupportFragment implements SwipeR
     protected void completePullDownRefresh() {
         refreshLayout.setRefreshing(false);
     }
+
+    /***
+     * 下拉刷新回调方法
+     */
+    protected abstract void onInitView();
 
     /***
      * 下拉刷新回调方法

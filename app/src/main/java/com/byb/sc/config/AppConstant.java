@@ -17,4 +17,7 @@ public class AppConstant {
      * AppSecret
      **/
     public static String APP_SECRET = "afd55f877bad4aaeab45fb4ca567d234";
+
+
+    public static int PAGE_SIZE = 20;
 }

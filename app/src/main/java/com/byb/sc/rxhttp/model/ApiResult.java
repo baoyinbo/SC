@@ -25,7 +25,8 @@ package com.byb.sc.rxhttp.model;
 public class ApiResult<T> {
     private int code;
     private String msg;
-    private T data;
+    private T results;
+    private boolean error;
     public int getCode() {
         return code;
     }
@@ -43,15 +44,15 @@ public class ApiResult<T> {
     }
 
     public T getData() {
-        return data;
+        return results;
     }
 
     public void setData(T data) {
-        this.data = data;
+        this.results = data;
     }
 
     public boolean isOk() {
-        return code == 0;
+        return !error;
     }
 
     @Override
@@ -59,7 +60,7 @@ public class ApiResult<T> {
         return "ApiResult{" +
                 "code='" + code + '\'' +
                 ", msg='" + msg + '\'' +
-                ", data=" + data +
+                ", data=" + results +
                 '}';
     }
 }

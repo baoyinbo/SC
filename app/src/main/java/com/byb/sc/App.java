@@ -45,8 +45,10 @@ public class App extends Application {
 
 
     private void initHttp() {
+        EasyHttp.init(this);
+
         //这里涉及到安全我把url去掉了，demo都是调试通的
-        String Url = "http://www.xxx.com";
+        String Url = "http://gank.io/api/data/";
 
 
         //设置请求头

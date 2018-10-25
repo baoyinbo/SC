@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/item_margin"
+    android:paddingRight="@dimen/item_margin"
+    android:paddingTop="@dimen/txt_margin"
+    android:paddingBottom="@dimen/txt_margin"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_item_white_click">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title"
+        style="@style/txt_first_black_bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/item_margin">
+        <ImageView
+            android:id="@+id/ivPic1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/pic_image_loading"
+            android:scaleType="center"/>
+        <ImageView
+            android:id="@+id/ivPic2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/pic_image_loading"
+            android:scaleType="center"
+            android:layout_marginLeft="@dimen/item_margin"/>
+        <ImageView
+            android:id="@+id/ivPic3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/pic_image_loading"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:scaleType="center"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/item_margin">
+        <TextView
+            android:id="@+id/tvWho"
+            style="@style/txt_third_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作者：xxx"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/txt_third_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/item_margin"
+            android:text="2018-10-10"/>
+
+        <TextView
+            android:id="@+id/tvType"
+            style="@style/txt_third_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="类型:Android"
+            android:gravity="right"/>
+    </LinearLayout>
+</LinearLayout>

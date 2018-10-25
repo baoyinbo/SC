@@ -48,15 +48,11 @@ public class FindMainFragment extends BaseMainFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fra_find_main, container, false);
         ButterKnife.bind(this, view);
-
+        initView();
         return view;
     }
 
-    @Override
-    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
-        super.onLazyInitView(savedInstanceState);
-        toolbar.setTitle("Gank");
-
+    private void initView() {
         initTpyes();
         for (int i = 0; i < types.size(); i++) {
             tabs.addTab(tabs.newTab().setText(types.get(i).getName()));
@@ -73,7 +69,12 @@ public class FindMainFragment extends BaseMainFragment {
         tabs.setTabsFromPagerAdapter(viewPagerAdapter);
         //设置tablayout 滑动
         tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
+    }
 
+    @Override
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
+        toolbar.setTitle("Gank");
     }
 
 
@@ -81,15 +82,15 @@ public class FindMainFragment extends BaseMainFragment {
      * 初始化tabs 数据
      */
     private void initTpyes() {
-        FindTypeModel model = new FindTypeModel("全部", 1);
-        FindTypeModel model0 = new FindTypeModel("推荐", 1);
-        FindTypeModel model1 = new FindTypeModel("福利", 2);
-        FindTypeModel model2 = new FindTypeModel("Android", 1);
-        FindTypeModel model3 = new FindTypeModel("IOS", 1);
-        FindTypeModel model4 = new FindTypeModel("休息视频", 1);
-        FindTypeModel model5 = new FindTypeModel("前端", 1);
-        FindTypeModel model6 = new FindTypeModel("拓展视频", 1);
-        FindTypeModel model7 = new FindTypeModel("App", 1);
+        FindTypeModel model = new FindTypeModel("全部", "all", 1);
+        FindTypeModel model0 = new FindTypeModel("推荐", "瞎推荐", 1);
+        FindTypeModel model1 = new FindTypeModel("福利", "福利",2);
+        FindTypeModel model2 = new FindTypeModel("Android", "Android", 1);
+        FindTypeModel model3 = new FindTypeModel("IOS", "iOS", 1);
+        FindTypeModel model4 = new FindTypeModel("休息视频", "休息视频",1);
+        FindTypeModel model5 = new FindTypeModel("前端", "前端",1);
+        FindTypeModel model6 = new FindTypeModel("拓展视频", "拓展视频",1);
+        FindTypeModel model7 = new FindTypeModel("App", "App",1);
 
         types = new ArrayList<>();
         types.add(model);
