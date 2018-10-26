@@ -3,12 +3,16 @@ package com.byb.sc.ui.stock;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
@@ -26,10 +30,25 @@ import butterknife.ButterKnife;
  */
 
 public class CarStockFragment extends BaseBackFragment {
+    @BindView(R.id.activityMain) CoordinatorLayout activityMain;
+    @BindView(R.id.appBarLayout) AppBarLayout appBarLayout;
+
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.tab) TabLayout tab;
     @BindView(R.id.viewPager) ViewPager viewPager;
     private CarStockViewPagerAdapter pagerAdapter;
+
+    @BindView(R.id.toolbar1) View toolbar1;
+
+    @BindView(R.id.toolbar2) View toolbar2;
+    @BindView(R.id.tvTitle) TextView tvTitle;
+    @BindView(R.id.ivSearch) ImageView ivSearch;
+    @BindView(R.id.ivCarAdd) ImageView ivCarAdd;
+
+    /**
+     * 标记当前显示的页面
+     */
+    private int viewPagerIndex = 0; //0：在库车辆 1：已售车辆
 
     public static CarStockFragment newInstance() {
         Bundle args = new Bundle();
@@ -55,6 +74,45 @@ public class CarStockFragment extends BaseBackFragment {
 
     private void initView(View view){
         initToolbarNav(toolbar);
+
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (verticalOffset == 0) {
+                    //完全展开
+                    toolbar1.setVisibility(View.VISIBLE);
+                    toolbar2.setVisibility(View.GONE);
+                    setToolbar1Alpha(255);
+                } else if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
+                    //appBarLayout.getTotalScrollRange() == 200
+                    //完全折叠
+                    toolbar1.setVisibility(View.GONE);
+                    toolbar2.setVisibility(View.VISIBLE);
+                    setTitle();
+
+                    setToolbar2Alpha(255);
+                } else {//0~200上滑下滑
+                    if (toolbar1.getVisibility() == View.VISIBLE) {
+//                        //操作Toolbar1
+                        int alpha = 300 - 155 - Math.abs(verticalOffset);
+                        setToolbar1Alpha(alpha);
+
+                    } else if (toolbar2.getVisibility() == View.VISIBLE) {
+                        if (Math.abs(verticalOffset) > 0 && Math.abs(verticalOffset) < 200) {
+                            toolbar1.setVisibility(View.VISIBLE);
+                            toolbar2.setVisibility(View.GONE);
+                            setToolbar1Alpha(255);
+                        }
+//                        //操作Toolbar2
+                        int alpha = (int) (255 * (Math.abs(verticalOffset) / 100f));
+                        setToolbar2Alpha(alpha);
+                    }
+                }
+            }
+        });
+
+
+
         tab.addTab(tab.newTab());
         tab.addTab(tab.newTab());
 
@@ -70,7 +128,8 @@ public class CarStockFragment extends BaseBackFragment {
 
             @Override
             public void onPageSelected(int position) {
-                ToastShowUtils.showTextToast("" + position);
+                viewPagerIndex = position;
+                setTitle();
             }
 
             @Override
@@ -92,5 +151,25 @@ public class CarStockFragment extends BaseBackFragment {
     public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
         super.onFragmentResult(requestCode, resultCode, data);
         pagerAdapter.onFragmentResult(requestCode, resultCode, data);
+    }
+
+
+
+    private void setToolbar1Alpha(int alpha) {
+//        ivHomeStore1.getDrawable().setAlpha(alpha);
+//        ivHomeCarAdd1.getDrawable().setAlpha(alpha);
+//        ivHomeCustomer1.getDrawable().setAlpha(alpha);
+//        ivHomeSub1.getDrawable().setAlpha(alpha);
+//        llSearch.getBackground().setAlpha(alpha);
+    }
+
+    private void setToolbar2Alpha(int alpha) {
+        ivSearch.getDrawable().setAlpha(alpha);
+        ivSearch.getDrawable().setAlpha(alpha);
+    }
+
+
+    private void setTitle() {
+        tvTitle.setText(viewPagerIndex == 0 ? "在库车辆" : "已售车辆");
     }
 }
