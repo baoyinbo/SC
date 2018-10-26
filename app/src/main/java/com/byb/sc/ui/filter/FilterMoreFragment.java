@@ -155,6 +155,7 @@ public class FilterMoreFragment extends BaseBackFragment {
                 }
 
                 notifyMenuRecyclerView(MENU_POSITON);
+                rvMenu.smoothScrollToPosition(MENU_POSITON);
             }
         });
     }
