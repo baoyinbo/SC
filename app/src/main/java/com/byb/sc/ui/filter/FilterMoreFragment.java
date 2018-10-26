@@ -2,11 +2,13 @@ package com.byb.sc.ui.filter;
 
 import android.annotation.SuppressLint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
@@ -24,6 +27,10 @@ import com.byb.sc.config.FilterPriceEnum;
 import com.byb.sc.model.FilterMenuModel;
 import com.byb.sc.model.FilterSingleModel;
 import com.byb.sc.ui.filter.adapter.FilterMoreMenuAdapter;
+import com.byb.sc.ui.filter.adapter.FilterMorePriceAdapter;
+import com.byb.sc.ui.view.rangeseekbar.OnRangeChangedListener;
+import com.byb.sc.ui.view.rangeseekbar.RangeSeekBar;
+import com.byb.sc.ui.view.rangeseekbar.SeekBar;
 import com.byb.sc.utils.ScreenUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -79,6 +86,13 @@ public class FilterMoreFragment extends BaseBackFragment {
     @BindView(R.id.llMileage) LinearLayout llMileage;               //里程
     @BindView(R.id.llDisplacement) LinearLayout llDisplacement;     //排放量
 
+
+    @BindView(R.id.seekBarPrice) RangeSeekBar seekBarPrice;
+    @BindView(R.id.tvPrice) TextView tvPrice;
+    @BindView(R.id.rvPrice) RecyclerView rvPrice;
+    private FilterMorePriceAdapter priceAdapter;
+    private List<FilterSingleModel> priceModels;
+
     public static FilterMoreFragment newInstance() {
         Bundle args = new Bundle();
         FilterMoreFragment fragment = new FilterMoreFragment();
@@ -98,11 +112,12 @@ public class FilterMoreFragment extends BaseBackFragment {
         ButterKnife.bind(this, view);
         test();
         initView();
+        initPriceView();
         return view;
     }
 
     private void test() {
-        //获取价格
+        //获取左侧菜单
         menuModels = new ArrayList<>();
         for (FilterMenuEnum menu : FilterMenuEnum.values()) {
             FilterMenuModel model = new FilterMenuModel();
@@ -111,6 +126,18 @@ public class FilterMoreFragment extends BaseBackFragment {
             menuModels.add(model);
         }
         menuModels.get(MENU_POSITON).setSelect(true);
+
+
+        //获取价格
+        priceModels = new ArrayList<>();
+        for (FilterPriceEnum price: FilterPriceEnum.values()) {
+            FilterSingleModel model = new FilterSingleModel();
+            model.setName(price.getName());
+            model.setId(price.getId());
+            model.setLowest(price.getLowest());
+            model.setHighest(price.getHighest());
+            priceModels.add(model);
+        }
     }
 
     @SuppressLint("NewApi")
@@ -160,6 +187,79 @@ public class FilterMoreFragment extends BaseBackFragment {
         });
     }
 
+    /**
+     * 价格选择
+     */
+    private void initPriceView() {
+        seekBarPrice.getLeftSeekBar().setTypeface(Typeface.DEFAULT_BOLD);
+        /**
+         * 设置选中的值类型
+         * "0.00"
+         * "0"
+         */
+        seekBarPrice.setIndicatorTextDecimalFormat("0");
+        /**
+         * 设置范围
+         * interval:最小间隔
+         */
+        seekBarPrice.setRange(0, 60, 5);
+        /**
+         * 设置当前值
+         */
+        seekBarPrice.setValue(0, 60);
+        /**
+         * 设置刻度类型
+         */
+        seekBarPrice.setTickMarkMode(RangeSeekBar.TRICK_MARK_MODE_OTHER);
+        /**
+         * 设置刻度
+         */
+        CharSequence[] cs = new CharSequence[]{"0", "10", "20", "30", "40", "50", "不限" };
+        seekBarPrice.setTickMarkTextArray(cs);
+
+        seekBarPrice.setOnRangeChangedListener(new OnRangeChangedListener() {
+            @Override
+            public void onRangeChanged(RangeSeekBar view, float leftValue, float rightValue, boolean isFromUser) {
+
+                if (leftValue == 0 && rightValue != 60) {
+                    tvPrice.setText((int) rightValue + "万以下");
+                } else if (leftValue == 0 && rightValue == 60) {
+                    tvPrice.setText("");
+                } else if (leftValue != 0 && rightValue != 60) {
+                    tvPrice.setText((int)leftValue + "-" + (int)rightValue + "万");
+                } else {
+                    tvPrice.setText((int)leftValue + "万以上");
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(RangeSeekBar view, boolean isLeft) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(RangeSeekBar view, boolean isLeft) {
+
+            }
+        });
+
+
+        rvPrice.setNestedScrollingEnabled(false);
+        rvPrice.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        priceAdapter = new FilterMorePriceAdapter(getContext(), new ArrayList<FilterSingleModel>());
+        rvPrice.setAdapter(priceAdapter);
+        priceAdapter.setNewData(priceModels);
+        priceAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                for (int j = 0; j < priceAdapter.getData().size(); j ++) {
+                    priceAdapter.getItem(j).setSelect(false);
+                }
+                priceAdapter.getItem(i).setSelect(true);
+                priceAdapter.notifyDataSetChanged();
+            }
+        });
+    }
 
     /**
      * 判断视图可见

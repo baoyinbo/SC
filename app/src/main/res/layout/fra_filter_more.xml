@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -58,16 +59,61 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <TextView
-                        style="@style/txt_first_black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/item_height"
-                        android:gravity="center_vertical"
-                        android:text="@string/car_price"/>
-                    <TextView
-                        style="@style/txt_first_black"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp" />
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/txt_first_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/item_height"
+                            android:gravity="center_vertical"
+                            android:text="@string/car_price"/>
+                        <TextView
+                            style="@style/txt_third_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/tvContext"
+                            android:layout_alignBaseline="@id/tvContext"
+                            android:layout_marginLeft="@dimen/txt_margin"
+                            android:text="(万元)"/>
+                        <TextView
+                            android:id="@+id/tvPrice"
+                            style="@style/txt_select_normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right" />
+                    </LinearLayout>
+                    <com.byb.sc.ui.view.rangeseekbar.RangeSeekBar
+                        android:id="@+id/seekBarPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="-20dp"
+                        app:rsb_mode="range"
+                        app:rsb_progress_height="4dp"
+                        app:rsb_progress_color="@color/comm_blue"
+                        app:rsb_progress_default_color="@color/rsbColorSeekBarDefault"
+                        app:rsb_tick_mark_text_margin="17dp"
+                        app:rsb_thumb_size="20dp"
+                        app:rsb_indicator_drawable="@drawable/progress_hint_bg"
+                        app:rsb_indicator_padding_bottom="10dp"
+                        app:rsb_indicator_width="40dp"
+                        app:rsb_indicator_height="40dp"
+                        app:rsb_indicator_show_mode="showWhenTouch"
+                        app:rsb_thumb_drawable="@drawable/thumb_activated"
+                        app:rsb_thumb_inactivated_drawable="@drawable/thumb_inactivated"
+                        app:rsb_thumb_scale_ratio="1.5"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants">
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rvPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none" />
+                    </RelativeLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
