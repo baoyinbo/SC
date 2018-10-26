@@ -32,6 +32,7 @@
     <string name="filter_sort">排序</string>
     <string name="filter_more">更多</string>
 
+
     <string name="home_store">库存管理</string>
     <string name="home_add_car">车辆发布</string>
     <string name="home_customer_manage">客户管理</string>
@@ -88,15 +89,19 @@
     <string name="car_old">二手车</string>
     <string name="car_brand">品牌车型</string>
     <string name="car_manufacture">出厂日期</string>
-    <string name="car_mileage">表显里程</string>
+    <string name="car_mileage">里程</string>
     <string name="car_color">车身颜色</string>
     <string name="car_in_color">内饰颜色</string>
     <string name="car_key_num">钥匙数量</string>
     <string name="car_location">车所在地</string>
-
     <string name="car_buy_price">收购价</string>
     <string name="car_invoice_price">发票价</string>
     <string name="car_buyer">收购员</string>
     <string name="car_buy_date">收购日期</string>
+    <string name="car_price">价格</string>
+    <string name="car_model">车型</string>
+    <string name="car_age">车龄</string>
+    <string name="car_gearbox">变速箱</string>
+    <string name="car_displacement">排量</string>
 
 </resources>

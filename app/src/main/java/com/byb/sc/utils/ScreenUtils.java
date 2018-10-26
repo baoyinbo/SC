@@ -1,6 +1,8 @@
 package com.byb.sc.utils;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 
 /**
  * 类描述：
@@ -27,4 +29,17 @@ public class ScreenUtils {
         final float scale = ctx.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
+
+    /**
+     * 获取屏幕宽度和高度，单位为px
+     * @param context
+     * @return
+     */
+    public static Point getScreenMetrics(Context context){
+        DisplayMetrics dm =context.getResources().getDisplayMetrics();
+        int w_screen = dm.widthPixels;
+        int h_screen = dm.heightPixels;
+        return new Point(w_screen, h_screen);
+    }
+
 }

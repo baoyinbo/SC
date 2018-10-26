@@ -77,4 +77,10 @@
         <item name="android:textColor">@color/single_select</item>
     </style>
 
+    <!--选中的文字-->
+    <style name="txt_select_normal">
+        <item name="android:textSize">@dimen/txt_second</item>
+        <item name="android:textColor">@color/single_select</item>
+    </style>
+
 </resources>

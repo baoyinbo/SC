@@ -18,6 +18,7 @@ import com.byb.sc.base.BaseBackFragment;
 import com.byb.sc.model.FilterFlowLayoutModel;
 import com.byb.sc.model.StockCarModel;
 import com.byb.sc.ui.adapter.UnionCarAdapter;
+import com.byb.sc.ui.filter.FilterMoreFragment;
 import com.byb.sc.ui.filter.FilterPriceFragment;
 import com.byb.sc.ui.stock.adapter.CarFlowLayoutFilterAdapter;
 import com.byb.sc.ui.view.decoration.SpacesItemDecoration;
@@ -43,6 +44,7 @@ import me.yokeyword.fragmentation.ExtraTransaction;
 
 public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshLayout.OnRefreshListener {
     private static final int FILTER_PRICE = 1000;
+    private static final int FILTER_MORE = 1002;
 
     @BindView(R.id.refreshLayout) SwipeRefreshLayout refreshLayout;
     @BindView(R.id.recy) RecyclerView recy;
@@ -67,12 +69,11 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fra_car_on_sale, container, false);
         ButterKnife.bind(this, view);
+        initView();
         return view;
     }
 
-    @Override
-    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
-        super.onLazyInitView(savedInstanceState);
+    private void initView() {
         refreshLayout.setOnRefreshListener(this);
         recy.setLayoutManager(new LinearLayoutManager(_mActivity));
         //添加自定义分割线
@@ -90,6 +91,11 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
         }
         filterAdapter = new CarFlowLayoutFilterAdapter(getContext(), flowLayoutModels);
         flFilter.setAdapter(filterAdapter);
+    }
+
+    @Override
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
     }
 
 
@@ -127,7 +133,8 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
 
                 break;
             case R.id.llFilterMore:
-
+                ((CarStockFragment)getParentFragment())
+                        .startForResult(FilterMoreFragment.newInstance(), FILTER_MORE);
                 break;
         }
     }

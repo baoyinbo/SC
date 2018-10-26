@@ -184,8 +184,7 @@ public class HomeMainFragment extends BaseMainFragment implements SwipeRefreshLa
                 /**
                  * 库存
                  */
-//                ((MainFragment)getParentFragment()).startBrotherFragment(CarStockFragment.newInstance());
-                ((MainFragment)getParentFragment()).start(CarStockFragment.newInstance());
+                ((MainFragment)getParentFragment()).startBrotherFragment(CarStockFragment.newInstance());
                 break;
 
             case R.id.ivHomeCarAdd1:
