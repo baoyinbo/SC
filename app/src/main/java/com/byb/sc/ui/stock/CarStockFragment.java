@@ -1,7 +1,5 @@
 package com.byb.sc.ui.stock;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,16 +12,11 @@ import android.view.ViewGroup;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
-import com.byb.sc.ui.company.CompanyDetailFragment;
-import com.byb.sc.ui.filter.FilterPriceFragment;
 import com.byb.sc.ui.stock.adapter.CarStockViewPagerAdapter;
 import com.byb.sc.utils.ToastShowUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import me.yokeyword.fragmentation.ISupportFragment;
-import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * 类描述：企业车辆库存

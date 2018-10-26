@@ -15,12 +15,16 @@ import android.view.ViewGroup;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
+import com.byb.sc.model.FilterFlowLayoutModel;
 import com.byb.sc.model.StockCarModel;
 import com.byb.sc.ui.adapter.UnionCarAdapter;
 import com.byb.sc.ui.filter.FilterPriceFragment;
+import com.byb.sc.ui.stock.adapter.CarFlowLayoutFilterAdapter;
 import com.byb.sc.ui.view.decoration.SpacesItemDecoration;
 import com.byb.sc.utils.ResourceUtils;
 import com.byb.sc.utils.ToastShowUtils;
+import com.zhy.view.flowlayout.FlowLayout;
+import com.zhy.view.flowlayout.TagFlowLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +46,13 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
 
     @BindView(R.id.refreshLayout) SwipeRefreshLayout refreshLayout;
     @BindView(R.id.recy) RecyclerView recy;
+    /**
+     * 筛选条件流式布局
+     */
+    @BindView(R.id.flFilter) TagFlowLayout flFilter;
+    private CarFlowLayoutFilterAdapter filterAdapter;
+    private List<FilterFlowLayoutModel> flowLayoutModels;
+
     private UnionCarAdapter adapter;
 
     public static CarOnSaleFragment newInstance() {
@@ -70,6 +81,15 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
         adapter = new UnionCarAdapter(this.getContext(), new ArrayList<StockCarModel>());
         recy.setAdapter(adapter);
         test();
+
+
+        if (flowLayoutModels != null && flowLayoutModels.size() >0) {
+            flFilter.setVisibility(View.VISIBLE);
+        } else {
+            flFilter.setVisibility(View.GONE);
+        }
+        filterAdapter = new CarFlowLayoutFilterAdapter(getContext(), flowLayoutModels);
+        flFilter.setAdapter(filterAdapter);
     }
 
 
@@ -82,6 +102,13 @@ public class CarOnSaleFragment extends BaseBackFragment implements SwipeRefreshL
             cars.add(new StockCarModel());
         }
         adapter.setNewData(cars);
+
+        flowLayoutModels = new ArrayList<>();
+        for (int i = 0; i < 6; i ++) {
+            FilterFlowLayoutModel model = new FilterFlowLayoutModel();
+            model.setName("10-20万元");
+            flowLayoutModels.add(model);
+        }
     }
 
 
