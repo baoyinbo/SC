@@ -29,7 +29,7 @@
 
 
     <ImageView
-        android:id="@+id/ivCarAdd"
+        android:id="@+id/ivCarAdd1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

@@ -12,15 +12,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.byb.sc.R;
 import com.byb.sc.base.BaseBackFragment;
+import com.byb.sc.ui.car.CarEditFragment;
 import com.byb.sc.ui.stock.adapter.CarStockViewPagerAdapter;
 import com.byb.sc.utils.ToastShowUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * 类描述：企业车辆库存
@@ -39,11 +42,13 @@ public class CarStockFragment extends BaseBackFragment {
     private CarStockViewPagerAdapter pagerAdapter;
 
     @BindView(R.id.toolbar1) View toolbar1;
+    @BindView(R.id.llSearch) LinearLayout llSearch;
+    @BindView(R.id.ivCarAdd1) ImageView ivCarAdd1;
 
     @BindView(R.id.toolbar2) View toolbar2;
     @BindView(R.id.tvTitle) TextView tvTitle;
     @BindView(R.id.ivSearch) ImageView ivSearch;
-    @BindView(R.id.ivCarAdd) ImageView ivCarAdd;
+    @BindView(R.id.ivCarAdd2) ImageView ivCarAdd2;
 
     /**
      * 标记当前显示的页面
@@ -118,8 +123,6 @@ public class CarStockFragment extends BaseBackFragment {
 
         pagerAdapter = new CarStockViewPagerAdapter(getChildFragmentManager(),
                 "在库车辆", "已售车辆");
-
-
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -156,20 +159,41 @@ public class CarStockFragment extends BaseBackFragment {
 
 
     private void setToolbar1Alpha(int alpha) {
-//        ivHomeStore1.getDrawable().setAlpha(alpha);
-//        ivHomeCarAdd1.getDrawable().setAlpha(alpha);
-//        ivHomeCustomer1.getDrawable().setAlpha(alpha);
-//        ivHomeSub1.getDrawable().setAlpha(alpha);
-//        llSearch.getBackground().setAlpha(alpha);
+        llSearch.getBackground().setAlpha(alpha);
+        ivCarAdd1.getDrawable().setAlpha(alpha);
     }
 
     private void setToolbar2Alpha(int alpha) {
         ivSearch.getDrawable().setAlpha(alpha);
-        ivSearch.getDrawable().setAlpha(alpha);
+        ivCarAdd2.getDrawable().setAlpha(alpha);
     }
 
 
+    /**
+     * 设置标题
+     */
     private void setTitle() {
         tvTitle.setText(viewPagerIndex == 0 ? "在库车辆" : "已售车辆");
+    }
+
+    @OnClick({R.id.ivCarAdd1, R.id.ivCarAdd2, R.id.llSearch, R.id.ivSearch})
+    protected void onViewClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivCarAdd1:
+            case R.id.ivCarAdd2:
+                /**
+                 * 添加车辆
+                 */
+                start(CarEditFragment.newInstance());
+                break;
+
+            case R.id.llSearch:
+            case R.id.ivSearch:
+                /**
+                 * 添加车辆
+                 */
+                ToastShowUtils.showTextToast("search");
+                break;
+        }
     }
 }
